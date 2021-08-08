@@ -2,8 +2,16 @@
   <div class="menu">
     <a v-for="(entry, i) in tabs" :key="entry"> {{ entry }} {{ i }} </a>
   </div>
+
+  <div class="black-bg" v-if="isModalOpen" @click="isModalOpen = false">
+    <div class="white-bg">
+      <h4>상세</h4>
+      <p>상세 내용</p>
+    </div>
+  </div>
+
   <div v-for="(item, index) in price" :key="index">
-    <h4>{{ products[index] }} 원룸</h4>
+    <h4 @click="isModalOpen = true">{{ products[index] }} 원룸</h4>
     <p>{{ price[index] }} 만원</p>
   </div>
 
@@ -24,6 +32,7 @@ export default {
   name: "App",
   data() {
     return {
+      isModalOpen: false,
       tabs: [`home`, `shop`, `about`],
       products: [`일원`, `마포`, `개포`],
       price: [100, 22, 33],
@@ -42,6 +51,25 @@ export default {
 </script>
 
 <style>
+body {
+  margin: 0;
+}
+div {
+  box-sizing: border-box;
+}
+.black-bg {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  padding: 20px;
+}
+.white-bg {
+  width: 100%;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
