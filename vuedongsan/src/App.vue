@@ -1,17 +1,27 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="menu">
+    <a v-for="(entry, i) in tabs" :key="entry"> {{ entry }} {{ i }} </a>
+  </div>
+  <div v-for="(item, index) in price" :key="index">
+    <h4>{{ products[index] }} 원룸</h4>
+    <p>{{ price[index] }} 만원</p>
+  </div>
+
+  <!-- <button v-on="inc">increment</button> -->
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  data() {
+    return {
+      tabs: [`home`, `shop`, `about`],
+      products: [`일원`, `마포`, `개포`],
+      price: [100, 22, 33],
+    };
+  },
+  components: {},
+};
 </script>
 
 <style>
@@ -21,6 +31,15 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+.menu {
+  background: darkslateblue;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.menu a {
+  color: white;
+  padding: 10px;
 }
 </style>
