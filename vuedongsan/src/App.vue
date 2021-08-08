@@ -7,6 +7,9 @@
     <div class="white-bg">
       <h4>상세</h4>
       <p>상세 내용</p>
+      <h1>{{ profile }}</h1>
+      <h2>{{ profile.name }}</h2>
+      <h2>{{ profile.skill }}</h2>
     </div>
   </div>
 
@@ -23,6 +26,7 @@
 </template>
 
 <script>
+import profile from "./profile";
 let countNum = 0;
 const inc = () => {
   console.log(`inc`);
@@ -38,6 +42,7 @@ export default {
       price: [100, 22, 33],
       countNum,
       inc,
+      profile,
     };
   },
   methods: {
