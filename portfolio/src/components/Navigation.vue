@@ -46,7 +46,7 @@ li {
 }
 
 .navigation {
-  background-color: #212121;
+  background-color: var(--bs-grey900);
   padding: 15px;
   border-radius: 5px;
   align-items: center;
@@ -60,7 +60,7 @@ li {
 }
 
 .navigation a:hover {
-  color: #424242;
+  color: var(--bs-grey800);
   padding: 10px;
   border-radius: 5px;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);

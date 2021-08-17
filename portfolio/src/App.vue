@@ -1,5 +1,7 @@
 <template>
-  <Navigation />
+  <div>
+    <Navigation class="MaterialShadow" />
+  </div>
 </template>
 
 <script>
@@ -20,15 +22,17 @@ export default {
 </script>
 
 <style>
+@import "assets/Color.css";
+@import "assets/MaterialDesign.css";
+
 body {
-  background-color: #424242;
+  background-color: var(--bs-grey800);
 }
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 </style>
