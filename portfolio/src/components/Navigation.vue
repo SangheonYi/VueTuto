@@ -15,7 +15,7 @@ export default {
   name: "Navigation",
   data() {
     return {
-      menus: [`About`, `Skill`, `Project`],
+      menus: [`About.`, `Skill.`, `Project.`],
     };
   },
   props: {},

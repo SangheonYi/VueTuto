@@ -1,11 +1,13 @@
 <template>
   <div>
     <Navigation class="MaterialShadow" />
+    <About />
   </div>
 </template>
 
 <script>
 import Navigation from "./components/Navigation.vue";
+import About from "./components/About.vue";
 
 const msg = "this is first tab";
 export default {
@@ -17,6 +19,7 @@ export default {
   },
   components: {
     Navigation,
+    About,
   },
 };
 </script>
