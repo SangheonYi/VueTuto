@@ -36,13 +36,20 @@ export default {
 }
 
 body {
-  background-color: var(--bs-grey800);
+  background-color: var(--bs-grey700);
 }
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  padding-left: 60px;
+  padding-right: 60px;
+  color: var(--bs-grey50);
+}
+
+.section-title {
+  border-bottom: 2px solid var(--bs-grey500);
+  color: var(--bs-grey50);
 }
 </style>

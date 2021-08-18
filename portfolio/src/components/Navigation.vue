@@ -3,9 +3,12 @@
     <nav class="navigation ">
       <ul>
         <li v-for="entry in menus" :key="entry">
-          <a v-bind:href="entry">
-            {{ entry }}
-          </a>
+          <div>
+            <a v-bind:href="entry" v-bind:class="entry">
+              <span class="under-line" />
+              {{ entry }}.
+            </a>
+          </div>
         </li>
       </ul>
     </nav>
@@ -17,7 +20,7 @@ export default {
   name: "Navigation",
   data() {
     return {
-      menus: [`About.`, `Skill.`, `Project.`, `Contact.`],
+      menus: [`About`, `Skill`, `Project`, `Contact`],
     };
   },
   props: {},
@@ -39,6 +42,7 @@ ul {
 li {
   display: inline-block;
   position: relative;
+  box-sizing: border-box;
   z-index: 1;
   margin: 0 5px;
   margin-top: 0px;
@@ -50,6 +54,40 @@ li {
 .nav-container {
   top: 0px;
   position: sticky;
+  padding: 5px;
+}
+
+.under-line {
+  position: absolute;
+  border: 2px solid transparent;
+  left: 0px;
+  bottom: -10px;
+  width: 0;
+}
+
+.navigation a:hover .under-line {
+  width: 100%;
+  transition: all 0.3s;
+}
+
+.navigation .About:hover .under-line {
+  background-color: var(--rally-green);
+  border: 2px solid var(--rally-green);
+}
+
+.navigation .Skill:hover .under-line {
+  background-color: var(--rally-orange);
+  border: 2px solid var(--rally-orange);
+}
+
+.navigation .Project:hover .under-line {
+  background-color: var(--rally-yellow);
+  border: 2px solid var(--rally-yellow);
+}
+
+.navigation .Contact:hover .under-line {
+  background-color: var(--rally-purple);
+  border: 2px solid var(--rally-purple);
 }
 
 .navigation a {
@@ -59,8 +97,8 @@ li {
 }
 
 .navigation a:hover {
-  color: var(--bs-grey800);
-  padding: 15px;
+  color: var(--bs-grey500);
+  padding: 10px;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 </style>

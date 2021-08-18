@@ -1,19 +1,23 @@
 <template>
   <div class="about MaterialCard">
-    <div class="about-img">
+    <div class="about-img ">
       <img src="../assets/아리.jpg" />
     </div>
-    <div class="about-text">
-      <p>
-        I'm sayi dlkljkdlkksssssssssssssvs sdsd s sf s ddddddv vsd sdd ds sdsdsd
-        sdsdsdsdsdsdsdsddd sssssssssd sd
-        sdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-        ddddddddddddddddddddddddddddddddddddddddd
-        ddddddddddddddddddddddddddddddddddddddd
-        dddddddddddddddddddddddddddddddddddddddddddd
-        ddddddddddddddddddddddddddddddddddddddddddddd
-        dddddddddddddddddddddddddddddddddddddddddddd
-      </p>
+    <div class="about-content">
+      <div class="section-title ">
+        <h2>
+          Who am I?
+        </h2>
+      </div>
+      <h3>Hello World! 개발자 이상헌입니다!</h3>
+      <div class="about-text">
+        <p>
+          수학, 컴퓨터 공학 학사 학위 취득 후 42Seoul을 이수 중입니다. 문제에
+          대한 새로운 관점 및 최적화 하는데에 관심이 많습니다. 개발 과정에서
+          발생하는 다양한 문제를 해결하는 걸 즐깁니다. 문제 해결의 성취감과
+          보람을 먹고 자랍니다.
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -31,30 +35,27 @@ export default {
 </script>
 
 <style scoped>
-.about-img img {
-  border-radius: 100%;
+.about {
+  box-sizing: content-box;
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-img {
+  width: 40%;
+}
+
+.about-content {
+  width: 60%;
+  padding-right: 30px;
 }
 
 p {
   display: block;
+  color: var(--bs-grey300);
   margin-block-start: 1em;
   margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
-}
-.Notcontainer {
-  display: flex;
-  border: 1px dotted red;
-  padding: 10px;
-}
-
-.item {
-  border: 1px solid green;
-  padding: 10px;
-}
-.about {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 </style>
