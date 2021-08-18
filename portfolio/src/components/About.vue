@@ -1,10 +1,19 @@
 <template>
-  <div class="about">
+  <div class="about MaterialCard">
     <div class="about-img">
       <img src="../assets/아리.jpg" />
     </div>
     <div class="about-text">
-      I'm sayi
+      <p>
+        I'm sayi dlkljkdlkksssssssssssssvs sdsd s sf s ddddddv vsd sdd ds sdsdsd
+        sdsdsdsdsdsdsdsddd sssssssssd sd
+        sdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+        ddddddddddddddddddddddddddddddddddddddddd
+        ddddddddddddddddddddddddddddddddddddddd
+        dddddddddddddddddddddddddddddddddddddddddddd
+        ddddddddddddddddddddddddddddddddddddddddddddd
+        dddddddddddddddddddddddddddddddddddddddddddd
+      </p>
     </div>
   </div>
 </template>
@@ -22,6 +31,17 @@ export default {
 </script>
 
 <style scoped>
+.about-img img {
+  border-radius: 100%;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
 .Notcontainer {
   display: flex;
   border: 1px dotted red;
@@ -34,5 +54,7 @@ export default {
 }
 .about {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 </style>

@@ -1,13 +1,15 @@
 <template>
-  <nav class="navigation">
-    <ul>
-      <li v-for="entry in menus" :key="entry">
-        <a v-bind:href="entry">
-          {{ entry }}
-        </a>
-      </li>
-    </ul>
-  </nav>
+  <div class="nav-container MaterialCard">
+    <nav class="navigation ">
+      <ul>
+        <li v-for="entry in menus" :key="entry">
+          <a v-bind:href="entry">
+            {{ entry }}
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </template>
 
 <script>
@@ -15,7 +17,7 @@ export default {
   name: "Navigation",
   data() {
     return {
-      menus: [`About.`, `Skill.`, `Project.`],
+      menus: [`About.`, `Skill.`, `Project.`, `Contact.`],
     };
   },
   props: {},
@@ -31,7 +33,7 @@ div {
 
 ul {
   list-style-type: none;
-  padding: 0;
+  margin-right: 1.6rem;
 }
 
 li {
@@ -45,24 +47,20 @@ li {
   margin-left: 5px;
 }
 
-.navigation {
-  background-color: var(--bs-grey900);
-  padding: 15px;
-  border-radius: 5px;
-  align-items: center;
+.nav-container {
+  top: 0px;
+  position: sticky;
 }
 
 .navigation a {
   text-decoration: none;
-  color: white;
+  color: var(--bs-grey50);
   padding: 10px;
-  border-radius: 5px;
 }
 
 .navigation a:hover {
   color: var(--bs-grey800);
-  padding: 10px;
-  border-radius: 5px;
+  padding: 15px;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 </style>

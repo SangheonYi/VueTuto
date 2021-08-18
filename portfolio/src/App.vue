@@ -1,6 +1,9 @@
 <template>
-  <div>
+  <div class="app-container">
     <Navigation class="MaterialShadow" />
+    <About />
+    <About />
+    <About />
     <About />
   </div>
 </template>
@@ -27,6 +30,10 @@ export default {
 <style>
 @import "assets/Color.css";
 @import "assets/MaterialDesign.css";
+
+.app-container {
+  height: 70%;
+}
 
 body {
   background-color: var(--bs-grey800);
