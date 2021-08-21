@@ -5,24 +5,24 @@
     <About />
     <About />
     <About />
+    <TopButton />
   </div>
 </template>
 
 <script>
 import Navigation from "./components/Navigation.vue";
 import About from "./components/About.vue";
+import TopButton from "./components/TopButton.vue";
 
-const msg = "this is first tab";
 export default {
   name: "App",
   data() {
-    return {
-      msg,
-    };
+    return {};
   },
   components: {
     Navigation,
     About,
+    TopButton,
   },
 };
 </script>
