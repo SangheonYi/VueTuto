@@ -1,14 +1,35 @@
 <template>
-  <button class="TopButton" v-on:click="goTop">Top</button>
+  <button
+    class="TopButton"
+    v-on:click="goTop"
+    v-on:scroll.passive="showTopButton"
+  >
+    Top
+  </button>
 </template>
 
 <script>
+import debounce from "lodash/debounce";
 export default {
   name: "TopButton",
   methods: {
     goTop() {
       window.scrollTo({ top: 0, behavior: "smooth" });
     },
+    showTopButton() {
+      const topButton = document.querySelector(".TopButton");
+      const showTopButton = `ShowTopButton`;
+      if (window.scrollY > 100) topButton.classList.add(showTopButton);
+      else if (window.scrollY < 100) topButton.classList.remove(showTopButton);
+    },
+  },
+  mounted() {
+    this.handleDebouncedScroll = debounce(this.showTopButton, 50);
+    window.addEventListener("scroll", this.handleDebouncedScroll);
+  },
+
+  beforeUnmount() {
+    window.removeEventListener("scroll", this.handleDebouncedScroll);
   },
 };
 </script>
@@ -17,10 +38,12 @@ export default {
 .TopButton {
   position: fixed;
   bottom: 15px;
-  right: 15px;
+  right: -40px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .ShowTopButton {
+  right: 15px;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 </style>
