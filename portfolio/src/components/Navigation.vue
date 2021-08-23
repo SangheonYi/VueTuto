@@ -1,7 +1,15 @@
 <template>
-  <div class="nav-container MaterialCard">
+  <div class="nav-container">
     <nav class="navigation ">
       <ul>
+        <li>
+          <div>
+            <router-link to="/" class="Home">
+              <span class="under-line" />
+              Home.
+            </router-link>
+          </div>
+        </li>
         <li v-for="entry in menus" :key="entry">
           <div>
             <router-link v-bind:to="entry" v-bind:class="entry">
@@ -16,11 +24,12 @@
 </template>
 
 <script>
+import debounce from "lodash/debounce";
 export default {
   name: "Navigation",
   data() {
     return {
-      menus: [`Home`, `About`, `Skill`, `Project`, `Contact`],
+      menus: [`About`, `Skill`, `Project`, `Contact`],
     };
   },
   props: {},
@@ -29,9 +38,20 @@ export default {
     widenNavigationBar() {
       const bar = document.querySelector(".nav-container");
       const widenBar = `WidenBar`;
-      if (window.scrollY > 100) bar.classList.add(widenBar);
-      else if (window.scrollY < 100) bar.classList.remove(widenBar);
+      if (window.scrollY > 50) {
+        bar.classList.add(widenBar);
+      } else if (window.scrollY < 50) {
+        bar.classList.remove(widenBar);
+      }
     },
+  },
+  mounted() {
+    this.handleDebouncedScroll = debounce(this.widenNavigationBar, 50);
+    window.addEventListener("scroll", this.handleDebouncedScroll);
+  },
+
+  beforeUnmount() {
+    window.removeEventListener("scroll", this.handleDebouncedScroll);
   },
 };
 </script>
@@ -62,6 +82,8 @@ li {
   top: 0px;
   position: sticky;
   padding: 5px;
+  background-color: var(--bs-grey800);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .under-line {
@@ -75,6 +97,11 @@ li {
 .navigation a:hover .under-line {
   width: 100%;
   transition: all 0.3s;
+}
+
+.navigation .Home:hover .under-line {
+  background-color: var(--rally-blue);
+  border: 2px solid var(--rally-blue);
 }
 
 .navigation .About:hover .under-line {
@@ -110,7 +137,8 @@ li {
 }
 
 .WidenBar {
-  width: 100%;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  background-color: transparent;
+  width: inherit;
+  margin: 0%;
 }
 </style>

@@ -5,6 +5,7 @@
     v-on:scroll.passive="showTopButton"
   >
     Top
+    <div class="triangle-button"></div>
   </div>
 </template>
 
@@ -38,16 +39,18 @@ export default {
 .TopButton {
   position: fixed;
   bottom: 15px;
-  right: -100px;
+  right: -180px;
   background-color: var(--rally-green);
+
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .TopButton:hover {
-  background-color: var(--rally-dark-green);
+  border: 0px solid #000;
+  background-color: var(--rally-yellow);
 }
 
 .ShowTopButton {
-  right: 5px;
+  right: -70px;
 }
 </style>

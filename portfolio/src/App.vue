@@ -1,21 +1,15 @@
 <template>
   <div class="app-container">
     <Navigation class="MaterialShadow" />
-    <router-view />
-    <About />
-    <Skill />
-    <Project />
-    <Contact />
+    <transition appear name="slide-fade">
+      <router-view />
+    </transition>
     <TopButton />
   </div>
 </template>
 
 <script>
 import Navigation from "./components/Navigation.vue";
-import About from "./components/About.vue";
-import Skill from "./components/Skill.vue";
-import Project from "./components/Project.vue";
-import Contact from "./components/Contact.vue";
 import TopButton from "./components/TopButton.vue";
 
 export default {
@@ -25,10 +19,6 @@ export default {
   },
   components: {
     Navigation,
-    About,
-    Skill,
-    Project,
-    Contact,
     TopButton,
   },
 };
@@ -43,6 +33,7 @@ export default {
 }
 
 body {
+  margin: 0%;
   background-color: var(--bs-grey700);
 }
 
@@ -50,13 +41,21 @@ body {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding-left: 60px;
-  padding-right: 60px;
   color: var(--bs-grey50);
 }
 
 .section-title {
   border-bottom: 2px solid var(--bs-grey500);
   color: var(--bs-grey50);
+}
+
+.slide-fade-enter-active {
+  transition: all 0.5s ease-out;
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(80px);
+  opacity: 0;
 }
 </style>
