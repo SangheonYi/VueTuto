@@ -1,11 +1,11 @@
 <template>
-  <button
-    class="TopButton"
+  <div
+    class="TopButton MaterialCard"
     v-on:click="goTop"
     v-on:scroll.passive="showTopButton"
   >
     Top
-  </button>
+  </div>
 </template>
 
 <script>
@@ -38,12 +38,16 @@ export default {
 .TopButton {
   position: fixed;
   bottom: 15px;
-  right: -40px;
+  right: -100px;
+  background-color: var(--rally-green);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+.TopButton:hover {
+  background-color: var(--rally-dark-green);
+}
+
 .ShowTopButton {
-  right: 15px;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  right: 5px;
 }
 </style>
