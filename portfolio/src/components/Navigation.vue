@@ -4,10 +4,10 @@
       <ul>
         <li v-for="entry in menus" :key="entry">
           <div>
-            <a v-bind:href="entry" v-bind:class="entry">
+            <router-link v-bind:to="entry" v-bind:class="entry">
               <span class="under-line" />
               {{ entry }}.
-            </a>
+            </router-link>
           </div>
         </li>
       </ul>
@@ -20,12 +20,19 @@ export default {
   name: "Navigation",
   data() {
     return {
-      menus: [`About`, `Skill`, `Project`, `Contact`],
+      menus: [`Home`, `About`, `Skill`, `Project`, `Contact`],
     };
   },
   props: {},
   components: {},
-  methods: {},
+  methods: {
+    widenNavigationBar() {
+      const bar = document.querySelector(".nav-container");
+      const widenBar = `WidenBar`;
+      if (window.scrollY > 100) bar.classList.add(widenBar);
+      else if (window.scrollY < 100) bar.classList.remove(widenBar);
+    },
+  },
 };
 </script>
 
@@ -99,6 +106,11 @@ li {
 .navigation a:hover {
   color: var(--bs-grey500);
   padding: 10px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.WidenBar {
+  width: 100%;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 </style>

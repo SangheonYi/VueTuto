@@ -12,6 +12,7 @@
     "node-sass": "^6.0.1",
     "sass-loader": "^12.1.0",
     "vue": "^3.0.0",
+    "vue-router": "^4.0.11",
     "vue3-tabs-chrome": "^0.2.1"
   },
   "devDependencies": {

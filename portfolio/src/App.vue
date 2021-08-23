@@ -1,10 +1,11 @@
 <template>
   <div class="app-container">
     <Navigation class="MaterialShadow" />
+    <router-view />
     <About />
-    <About />
-    <About />
-    <About />
+    <Skill />
+    <Project />
+    <Contact />
     <TopButton />
   </div>
 </template>
@@ -12,6 +13,9 @@
 <script>
 import Navigation from "./components/Navigation.vue";
 import About from "./components/About.vue";
+import Skill from "./components/Skill.vue";
+import Project from "./components/Project.vue";
+import Contact from "./components/Contact.vue";
 import TopButton from "./components/TopButton.vue";
 
 export default {
@@ -22,6 +26,9 @@ export default {
   components: {
     Navigation,
     About,
+    Skill,
+    Project,
+    Contact,
     TopButton,
   },
 };
