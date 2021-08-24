@@ -1,13 +1,17 @@
 <template>
   <div class="about MaterialCard">
-    <div class="about-img ">
-      <img src="../assets/아리.jpg" />
-    </div>
+    <img class="about-img " src="../assets/이상헌.jpg" />
     <div class="about-content">
       <div class="section-title ">
         <h2>
           Who am I?
         </h2>
+        <div class="partition">
+          <span class="dark-green-under-line" />
+          <span class="green-under-line" />
+          <span class="light-green-under-line" />
+          <span class="semi-dark-green-under-line" />
+        </div>
       </div>
       <h3>Hello World! 개발자 이상헌입니다!</h3>
       <div class="about-text">
@@ -42,20 +46,66 @@ export default {
 }
 
 .about-img {
-  width: 40%;
+  width: 20%;
+  height: auto;
+  padding: 20px;
 }
 
 .about-content {
-  width: 60%;
+  width: 75%;
   padding-right: 30px;
+  padding-left: 30px;
+  color: var(--bs-grey300);
+  background: var(--bs-grey801);
 }
 
 p {
   display: block;
-  color: var(--bs-grey300);
+  color: var(--bs-grey400);
   margin-block-start: 1em;
   margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
 }
+
+.partition {
+  display: flex;
+}
+
+.partition span {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 1px solid transparent;
+}
+
+.partition span:hover {
+  width: 100%;
+}
+
+.dark-green-under-line {
+  width: 10%;
+  background-color: var(--rally-dark-green);
+}
+
+.green-under-line {
+  width: 40%;
+  background-color: var(--rally-green);
+}
+
+.light-green-under-line {
+  width: 30%;
+  background-color: var(--rally-light-green);
+}
+
+.semi-dark-green-under-line {
+  width: 20%;
+  background-color: var(--rally-semi-dark-green);
+}
+
+/* .component-highlight {
+  position: absolute;
+  border: 2px solid transparent;
+  width: 50%;
+  background-color: var(--rally-green);
+  border: 2px solid var(--rally-green);
+} */
 </style>

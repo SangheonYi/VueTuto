@@ -34,7 +34,7 @@ export default {
 
 body {
   margin: 0%;
-  background-color: var(--bs-grey700);
+  background-color: var(--bs-grey800);
 }
 
 #app {
@@ -45,8 +45,8 @@ body {
 }
 
 .section-title {
-  border-bottom: 2px solid var(--bs-grey500);
-  color: var(--bs-grey50);
+  color: var(--bs-grey200);
+  border-bottom: 2px solid transparent;
 }
 
 .slide-fade-enter-active {

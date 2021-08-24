@@ -47,7 +47,7 @@ export default {
 
 .TopButton:hover {
   border: 0px solid #000;
-  background-color: var(--rally-yellow);
+  background-color: var(--rally-dark-green);
 }
 
 .ShowTopButton {

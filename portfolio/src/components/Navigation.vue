@@ -82,7 +82,7 @@ li {
   top: 0px;
   position: sticky;
   padding: 5px;
-  background-color: var(--bs-grey800);
+  background-color: var(--bs-grey803);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
