@@ -22,14 +22,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
-      - name: Run pwd
-        run: pwd
-
-      # Runs a set of commands using the runners shell
-      - name: Run ls -al
-        run: |
-          ls -al
+      - name: "context"
+        env: 
+          COMMIT_ID: ${{ git.sha }}
+        run: echo "commit id => $COMMIT_ID"
