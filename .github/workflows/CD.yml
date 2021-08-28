@@ -9,9 +9,9 @@ jobs:
 
       - name: Dump checkout result
         run: |
-        pwd
-        ls
-
+          pwd
+          ls
+  
       - id: Build-Vue
         uses: xRealNeon/VuePagesAction@1.0.0
         with:
