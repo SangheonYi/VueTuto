@@ -1,5 +1,3 @@
-on: push
-
 jobs:
   one:
     runs-on: ubuntu-latest
