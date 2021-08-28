@@ -11,9 +11,8 @@ jobs:
         run: |
         pwd
         ls
-
-      - id: Build-Vue
-        uses: xRealNeon/VuePagesAction@1.0.0
+      - name: Vue to Github Pages with yarn
+        uses: hotrungnhan/VuePagesAction@1.0.1
         with:
           username: "SangheonYi"
           reponame: "VueTuto"
