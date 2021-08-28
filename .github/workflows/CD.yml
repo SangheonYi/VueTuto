@@ -9,8 +9,8 @@ jobs:
 
       - name: Dump checkout result
         run: |
-        pwd
-        ls
+          pwd
+          ls
       - name: Vue to Github Pages with yarn
         uses: hotrungnhan/VuePagesAction@1.0.1
         with:
