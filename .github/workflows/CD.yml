@@ -11,9 +11,3 @@ jobs:
         run: |
           pwd
           ls
-      - name: Vue to Github Pages with yarn
-        uses: hotrungnhan/VuePagesAction@1.0.1
-        with:
-          username: "SangheonYi"
-          reponame: "VueTuto"
-          token: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
