@@ -11,3 +11,5 @@ jobs:
         run: |
           pwd
           ls
+      - name: Deploy
+        run: yarn run depoloy
