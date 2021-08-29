@@ -6,22 +6,18 @@ jobs:
     runs-on: ubuntu-latest
     name: Build Vue
     steps:
+      - uses: actions/checkout@v2
         env:
           PUSHER_NAME: github.event.pusher.name
           PUSHER_EMAIL: github.event.pusher.email
-
-      - uses: actions/checkout@v2
-
       - name: Dump checkout result
         run: |
           pwd
           ls
-
       - name: Git config
         run: |
           git config --global user.name "$PUSHER_NAME"
           git config --global user.email "$PUSHER_EMAIL"
-
       - name: Deploy
         run: |
           yarn install
