@@ -7,27 +7,27 @@ import Contact from "./components/Contact.vue";
 
 const routes = [
   {
-    path: "/",
+    path: `${process.env.BASE_URL}`,
     name: "Home",
     component: Home,
   },
   {
-    path: "/About",
+    path: `${process.env.BASE_URL}About`,
     name: "About",
     component: About,
   },
   {
-    path: "/Skill",
+    path: `${process.env.BASE_URL}Skill`,
     name: "Skill",
     component: Skill,
   },
   {
-    path: "/Project",
+    path: `${process.env.BASE_URL}Project`,
     name: "Project",
     component: Project,
   },
   {
-    path: "/Contact",
+    path: `${process.env.BASE_URL}Contact`,
     name: "Contact",
     component: Contact,
   },

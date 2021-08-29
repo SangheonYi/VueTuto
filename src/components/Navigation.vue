@@ -4,7 +4,7 @@
       <ul>
         <li>
           <div>
-            <router-link to="/" class="Home">
+            <router-link v-bind:to="base_url" class="Home">
               <span class="under-line" />
               Home.
             </router-link>
@@ -12,7 +12,7 @@
         </li>
         <li v-for="entry in menus" :key="entry">
           <div>
-            <router-link v-bind:to="entry" v-bind:class="entry">
+            <router-link v-bind:to="base_url + entry" v-bind:class="entry">
               <span class="under-line" />
               {{ entry }}.
             </router-link>
@@ -25,11 +25,14 @@
 
 <script>
 import debounce from "lodash/debounce";
+
+const base_url = process.env.BASE_URL;
 export default {
   name: "Navigation",
   data() {
     return {
       menus: [`About`, `Skill`, `Project`, `Contact`],
+      base_url,
     };
   },
   props: {},
