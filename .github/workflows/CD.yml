@@ -12,4 +12,6 @@ jobs:
           pwd
           ls
       - name: Deploy
-        run: yarn run deploy
+        run: |
+          yarn install
+          yarn run deploy
