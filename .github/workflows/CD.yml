@@ -1,6 +1,5 @@
 name: Build Vue
 on: push
-inputs:
 
 jobs:
   build_vue:
