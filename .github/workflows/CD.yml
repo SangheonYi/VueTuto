@@ -1,5 +1,6 @@
 name: Build Vue
 on: push
+inputs:
 
 jobs:
   build_vue:
@@ -8,14 +9,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         env:
-          PUSHER_NAME: github.event.pusher.name
-          PUSHER_EMAIL: github.event.pusher.email
+          PUSHER_NAME: ${{ github.event.pusher.name }}
+          PUSHER_EMAIL: ${{ github.event.pusher.email }}
       - name: Dump checkout result
         run: |
           pwd
           ls
       - name: Git config
         run: |
+          echo "$PUSHER_NAME"
+          echo "$PUSHER_EMAIL"
           git config --global user.name "$PUSHER_NAME"
           git config --global user.email "$PUSHER_EMAIL"
       - name: Deploy
