@@ -18,7 +18,7 @@ jobs:
           PUSHER_NAME: ${{ github.event.pusher.name }}
           PUSHER_EMAIL: ${{ github.event.pusher.email }}
           REPOSITORY: ${{ github.repository }}
-          SECRET_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          SECRET_TOKEN: ${{ secrets.TOKEN }}
         run: |
           echo "$PUSHER_NAME"
           echo "$PUSHER_EMAIL"
