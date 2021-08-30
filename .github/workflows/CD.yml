@@ -17,9 +17,20 @@ jobs:
         env:
           PUSHER_NAME: ${{ github.event.pusher.name }}
           PUSHER_EMAIL: ${{ github.event.pusher.email }}
+          REPOSITORY: ${{ github.repository }}
+          TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         run: |
           echo "$PUSHER_NAME"
           echo "$PUSHER_EMAIL"
-          git version
+          echo "$TOKEN"
           git config --global user.name "$PUSHER_NAME"
           git config --global user.email "$PUSHER_EMAIL"
+          yarn install
+          yarn run build
+          cd dist
+          git init
+          git add -A
+          git commit -m 'deploy: Deploy from CD'
+          echo "https://${{ PUSHER_NAME }}:@github.com/${{ REPOSITORY }}.git"
+          git push -f https://${{ PUSHER_NAME }}:${{ TOKEN }}@github.com/${{ REPOSITORY }}.git master:gh-pages
+
