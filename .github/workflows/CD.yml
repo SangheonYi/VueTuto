@@ -19,6 +19,7 @@ jobs:
         run: |
           echo "$PUSHER_NAME"
           echo "$PUSHER_EMAIL"
+          git version
           git config --global user.name "$PUSHER_NAME"
           git config --global user.email "$PUSHER_EMAIL"
           yarn install
