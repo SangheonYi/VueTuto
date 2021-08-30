@@ -1,3 +1,4 @@
+
 name: Build Vue
 on: push
 
@@ -22,6 +23,3 @@ jobs:
           git version
           git config --global user.name "$PUSHER_NAME"
           git config --global user.email "$PUSHER_EMAIL"
-      - name: Vue to Github Pages with yarn
-        uses: hotrungnhan/VuePagesAction@1.0.1
-
