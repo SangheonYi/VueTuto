@@ -14,13 +14,11 @@ jobs:
         run: |
           pwd
           ls
-      - name: Git config
+      - name: Deploy
         run: |
           echo "$PUSHER_NAME"
           echo "$PUSHER_EMAIL"
           git config --global user.name "$PUSHER_NAME"
           git config --global user.email "$PUSHER_EMAIL"
-      - name: Deploy
-        run: |
           yarn install
           yarn run deploy
