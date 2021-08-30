@@ -7,9 +7,7 @@ jobs:
     name: Build Vue
     steps:
       - uses: actions/checkout@v2
-        env:
-          PUSHER_NAME: ${{ github.event.pusher.name }}
-          PUSHER_EMAIL: ${{ github.event.pusher.email }}
+
       - name: Dump checkout result
         run: |
           pwd
