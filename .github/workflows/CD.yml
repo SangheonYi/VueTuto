@@ -1,3 +1,4 @@
+
 name: Build Vue
 on: push
 
@@ -13,10 +14,23 @@ jobs:
           pwd
           ls
       - name: Deploy
+        env:
+          PUSHER_NAME: ${{ github.event.pusher.name }}
+          PUSHER_EMAIL: ${{ github.event.pusher.email }}
+          REPOSITORY: ${{ github.repository }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: |
           echo "$PUSHER_NAME"
           echo "$PUSHER_EMAIL"
+          echo "$SECRET_TOKEN"
           git config --global user.name "$PUSHER_NAME"
           git config --global user.email "$PUSHER_EMAIL"
           yarn install
-          yarn run deploy
+          yarn run build
+          cd dist
+          git init
+          git add -A
+          git commit -m 'deploy: Deploy from CD'
+          echo "😋 https://$PUSHER_NAME:$ACCESS_TOKEN@github.com/$REPOSITORY.git"
+          git push -f "https://$PUSHER_NAME:$ACCESS_TOKEN@github.com/$REPOSITORY.git" master:gh-pages
+
