@@ -100,12 +100,4 @@ p {
   width: 20%;
   background-color: var(--rally-semi-dark-green);
 }
-
-/* .component-highlight {
-  position: absolute;
-  border: 2px solid transparent;
-  width: 50%;
-  background-color: var(--rally-green);
-  border: 2px solid var(--rally-green);
-} */
 </style>
