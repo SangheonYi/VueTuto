@@ -6,15 +6,15 @@
         <h2>
           Who am I?
         </h2>
-        <div class="partition">
-          <span class="dark-green-under-line" />
-          <span class="green-under-line" />
-          <span class="light-green-under-line" />
-          <span class="semi-dark-green-under-line" />
-        </div>
       </div>
-      <h3>Hello World! 개발자 이상헌입니다!</h3>
+      <div class="partition">
+        <span class="dark-green-under-line" />
+        <span class="green-under-line" />
+        <span class="light-green-under-line" />
+        <span class="semi-dark-green-under-line" />
+      </div>
       <div class="about-text">
+        <h3>Hello World! 개발자 이상헌입니다!</h3>
         <p>
           수학, 컴퓨터 공학 학사 학위 취득 후 42Seoul을 이수 중입니다. 문제에
           대한 새로운 관점 및 최적화 하는데에 관심이 많습니다. 새로운 기능 추가,
@@ -53,10 +53,12 @@ export default {
 
 .about-content {
   width: 75%;
-  padding-right: 30px;
-  padding-left: 30px;
   color: var(--bs-grey300);
   background: var(--bs-grey801);
+}
+
+.about-text {
+  padding: 10px;
 }
 
 p {

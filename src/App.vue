@@ -46,6 +46,7 @@ body {
 
 .section-title {
   color: var(--bs-grey200);
+  padding-left: 20px;
   border-bottom: 2px solid transparent;
 }
 

@@ -1,31 +1,24 @@
 <template>
-  <div class=" MaterialCard">
-    <div class="section-title ">
-      <h2>
-        My Programming Skills?
-      </h2>
-    </div>
+  <div class=" ">
     <div class="skill">
       <div class="skill-contents">
-        <h3>Programming Langauge</h3>
+        <div class="section-title ">
+          <h2>
+            My Programming Skills?
+          </h2>
+        </div>
+        <div class="partition">
+          <span class="dark-orange-under-line" />
+          <span class="orange-under-line" />
+          <span class="light-orange-under-line" />
+          <span class="semi-dark-orange-under-line" />
+        </div>
         <div class="contents-container">
           <img
-            v-for="element in PLImages"
+            v-for="element in images"
             :key="element"
             :src="require(`../assets/skill_icon/${element}`)"
           />
-        </div>
-      </div>
-      <div class="skill">
-        <div class="skill-contents">
-          <h3>Framework</h3>
-          <div class="contents-container">
-            <img
-              v-for="element in frameworkImages"
-              :key="element"
-              :src="require(`../assets/skill_icon/${element}`)"
-            />
-          </div>
         </div>
       </div>
     </div>
@@ -33,14 +26,13 @@
 </template>
 
 <script>
-const PLImages = [
+const images = [
+  `C_Programming_Language.svg`,
   `ISO_C++_Logo.svg`,
   `java.svg`,
   `Kotlin_Icon.svg`,
   `JavaScript.svg`,
   `Typescript_logo_2020.svg`,
-];
-const frameworkImages = [
   `Android_robot.svg`,
   `React-icon.svg`,
   `Vue.js_Logo_2.svg`,
@@ -51,8 +43,7 @@ export default {
 
   data() {
     return {
-      PLImages,
-      frameworkImages,
+      images,
     };
   },
 };
@@ -66,21 +57,30 @@ export default {
 }
 .skill-contents {
   width: 75%;
-  padding-right: 30px;
-  padding-left: 30px;
+
   color: var(--bs-grey300);
   background: var(--bs-grey801);
 }
+
 .contents-container {
   width: 100%;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-img {
+.contents-container img {
+  border-radius: 20px;
   width: 10%;
-  height: 100%;
+  padding: 5px;
+  margin: 20px;
+  background-color: aliceblue;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+img:hover {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .partition {
@@ -96,23 +96,23 @@ img {
   width: 100%;
 }
 
-.dark-green-under-line {
+.dark-orange-under-line {
   width: 10%;
-  background-color: var(--rally-dark-green);
+  background-color: var(--rally-dark-orange);
 }
 
-.green-under-line {
-  width: 40%;
-  background-color: var(--rally-green);
-}
-
-.light-green-under-line {
+.orange-under-line {
   width: 30%;
-  background-color: var(--rally-light-green);
+  background-color: var(--rally-orange);
 }
 
-.semi-dark-green-under-line {
+.light-orange-under-line {
+  width: 40%;
+  background-color: var(--rally-light-orange);
+}
+
+.semi-dark-orange-under-line {
   width: 20%;
-  background-color: var(--rally-semi-dark-green);
+  background-color: var(--rally-semi-dark-orange);
 }
 </style>
