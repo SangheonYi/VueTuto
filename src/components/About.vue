@@ -16,10 +16,10 @@
       <div class="about-text">
         <h3>Hello World! 개발자 이상헌입니다!</h3>
         <p>
-          수학, 컴퓨터 공학 학사 학위 취득 후 42Seoul을 이수 중입니다. 문제에
-          대한 새로운 관점 및 최적화 하는데에 관심이 많습니다. 새로운 기능 추가,
-          성능개선 개발 과정에서 발생하는 다양한 문제해결을 즐깁니다. 유지보수가
-          쉬운 유연하고 깔끔한 프로그래밍에 관심이 많습니다.
+          수학, 컴퓨터 공학 학사 학위 취득 후 교육 프로그램 42Seoul 공통 과정을
+          수료했습니다. 새로운 기능 추가, 성능개선 개발 과정에서 발생하는 다양한
+          문제해결 후 느끼는 성취감을 좋아합니다. 팀원들과 협력해서 새로운
+          관점으로 문제해결하는 것을 특히 좋아합니다.
         </p>
       </div>
     </div>
@@ -77,10 +77,6 @@ p {
 .partition span {
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   border: 1px solid transparent;
-}
-
-.partition span:hover {
-  width: 100%;
 }
 
 .dark-green-under-line {

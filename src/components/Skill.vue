@@ -1,7 +1,7 @@
 <template>
-  <div class=" ">
+  <div class="MaterialCard">
     <div class="skill">
-      <div class="skill-contents">
+      <div class="skill-contents ">
         <div class="section-title ">
           <h2>
             My Programming Skills?
@@ -14,12 +14,20 @@
           <span class="semi-dark-orange-under-line" />
         </div>
         <div class="contents-container">
-          <img
-            v-for="element in images"
-            :key="element"
-            :src="require(`../assets/skill_icon/${element}`)"
-          />
+          <div class="front">
+            <img
+              class="skill-image"
+              v-for="element in images"
+              :key="element"
+              :src="require(`../assets/skill_icon/${element}`)"
+            />
+          </div>
         </div>
+      </div>
+      <div class="skill-description">
+        <p>
+          some description
+        </p>
       </div>
     </div>
   </div>
@@ -37,6 +45,8 @@ const images = [
   `React-icon.svg`,
   `Vue.js_Logo_2.svg`,
   `nestjs-icon.svg`,
+  `postgresql.svg`,
+  `docker.svg`,
 ];
 export default {
   name: "Skill",
@@ -53,8 +63,15 @@ export default {
 .skill {
   display: flex;
   flex-direction: row;
-  justify-content: center;
 }
+
+.skill-description {
+  width: 25%;
+  margin-left: 20px;
+  color: var(--bs-grey300);
+  background: var(--bs-grey801);
+}
+
 .skill-contents {
   width: 75%;
 
@@ -64,23 +81,26 @@ export default {
 
 .contents-container {
   width: 100%;
-
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.contents-container img {
+.contents-container .skill-image {
   border-radius: 20px;
   width: 10%;
+  height: 30%;
   padding: 5px;
   margin: 20px;
-  background-color: aliceblue;
+  background-color: var(--bs-grey700);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-img:hover {
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+.contents-container .skill-image:hover {
+  background-color: var(--bs-grey500);
+  transform: translateY(-10px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 5px 12px rgba(0, 0, 0, 0.5);
 }
 
 .partition {
@@ -90,10 +110,6 @@ img:hover {
 .partition span {
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   border: 1px solid transparent;
-}
-
-.partition span:hover {
-  width: 100%;
 }
 
 .dark-orange-under-line {
