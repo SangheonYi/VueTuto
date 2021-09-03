@@ -1,31 +1,124 @@
 <template>
   <div class="contact MaterialCard">
-    <div class="contact-content">
+    <div class="contacts">
       <div class="section-title ">
         <h2>
           How can contact?
         </h2>
-      </div>
-      <h3>Hello World! 개발자 이상헌입니다!</h3>
-      <div class="contact-text">
-        <p>
-          수학, 컴퓨터 공학 학사 학위 취득 후 42Seoul을 이수 중입니다. 문제에
-          대한 새로운 관점 및 최적화 하는데에 관심이 많습니다. 새로운 기능 추가,
-          성능개선 개발 과정에서 발생하는 다양한 문제해결을 즐깁니다. 유지보수가
-          쉬운 유연하고 깔끔한 프로그래밍에 관심이 많습니다.
-        </p>
+        <div class="partition">
+          <span class="purple-under-line" />
+          <span class="dark-purple-under-line" />
+          <span class="light-purple-under-line" />
+          <span class="deep-purple-under-line" />
+          <span class="semi-dark-purple-under-line" />
+        </div>
+        <ul class="contact-info">
+          <li
+            class="contact-content"
+            v-for="element in contacts"
+            :key="element"
+          >
+            <ContactInfo :contact="element" />
+          </li>
+        </ul>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import ContactInfo from "./ContactInfo.vue";
+const contacts = [
+  {
+    method: "Email",
+    icon: "mail_outline_black_24dp.svg",
+    contact: "yshgnu@naver.com",
+    href_method: "mailto:",
+  },
+  {
+    method: "Phone",
+    icon: "phone_in_talk_black_24dp.svg",
+    contact: "010-9298-3954",
+    href_method: "tel:",
+  },
+  {
+    method: "Github",
+    icon: "github.svg",
+    contact: "https://github.com/SangheonYi",
+    href_method: "",
+  },
+];
 export default {
   name: "Contact",
+
   data() {
-    return {};
+    return { contacts };
+  },
+  components: {
+    ContactInfo,
   },
 };
 </script>
 
-<style></style>
+<style>
+.contacts {
+  width: 100%;
+  color: var(--bs-grey300);
+  background: var(--bs-grey801);
+}
+
+.contact-info {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
+.contact-content {
+  display: flex;
+  align-items: center;
+  -webkit-box-align: start;
+  text-align: -webkit-matc-parent;
+  margin-bottom: 20px;
+}
+
+.partition {
+  display: flex;
+}
+
+.partition span {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 1px solid transparent;
+}
+
+.dark-purple-under-line {
+  width: 10%;
+  background-color: var(--rally-dark-purple);
+}
+
+.purple-under-line {
+  width: 25%;
+  background-color: var(--rally-purple);
+}
+
+.deep-purple-under-line {
+  width: 15%;
+  background-color: var(--rally-deep-purple900);
+}
+
+.light-purple-under-line {
+  width: 30%;
+  background-color: var(--rally-light-purple);
+}
+
+.semi-dark-purple-under-line {
+  width: 20%;
+  background-color: var(--rally-semi-dark-purple);
+}
+</style>
