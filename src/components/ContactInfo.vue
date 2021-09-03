@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="contact-info-container">
     <img
       :src="require(`../assets/contact_icon/${contact.icon}`)"
       :alt="contact.method"
@@ -52,6 +52,18 @@ export default {
 </script>
 
 <style>
+.contact-info-container {
+  display: flex;
+}
+
+.contact-info-container div {
+  padding-top: 30px;
+}
+
+.contact-info-container div ul li {
+  padding-top: 10px;
+}
+
 .contact-content img {
   vertical-align: middle;
   margin-right: 18px;

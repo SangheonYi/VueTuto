@@ -65,16 +65,15 @@ export default {
   flex-direction: row;
 }
 
-.skill-description {
-  width: 25%;
-  margin-left: 20px;
+.skill-contents {
+  width: 75%;
   color: var(--bs-grey300);
   background: var(--bs-grey801);
 }
 
-.skill-contents {
-  width: 75%;
-
+.skill-description {
+  width: 25%;
+  margin-left: 20px;
   color: var(--bs-grey300);
   background: var(--bs-grey801);
 }

@@ -1,27 +1,23 @@
 <template>
   <div class="contact MaterialCard">
-    <div class="contacts">
+    <div class="contact-container">
       <div class="section-title ">
         <h2>
           How can contact?
         </h2>
-        <div class="partition">
-          <span class="purple-under-line" />
-          <span class="dark-purple-under-line" />
-          <span class="light-purple-under-line" />
-          <span class="deep-purple-under-line" />
-          <span class="semi-dark-purple-under-line" />
-        </div>
-        <ul class="contact-info">
-          <li
-            class="contact-content"
-            v-for="element in contacts"
-            :key="element"
-          >
-            <ContactInfo :contact="element" />
-          </li>
-        </ul>
       </div>
+      <div class="partition">
+        <span class="purple-under-line" />
+        <span class="dark-purple-under-line" />
+        <span class="light-purple-under-line" />
+        <span class="deep-purple-under-line" />
+        <span class="semi-dark-purple-under-line" />
+      </div>
+      <ul class="contact-info">
+        <li class="contact-content" v-for="element in contacts" :key="element">
+          <ContactInfo :contact="element" />
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -61,31 +57,16 @@ export default {
 </script>
 
 <style>
-.contacts {
+.contact-container {
   width: 100%;
+  display: flex;
+  flex-direction: column;
   color: var(--bs-grey300);
   background: var(--bs-grey801);
 }
 
-.contact-info {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  padding-inline-start: 40px;
-}
-
 .contact-content {
   display: flex;
-  align-items: center;
-  -webkit-box-align: start;
-  text-align: -webkit-matc-parent;
-  margin-bottom: 20px;
 }
 
 .partition {
