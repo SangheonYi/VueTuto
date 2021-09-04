@@ -14,12 +14,14 @@
         <span class="semi-dark-green-under-line" />
       </div>
       <div class="about-text">
-        <h3>Hello World! 개발자 이상헌입니다!</h3>
+        <h2>
+          Sangheon Yi
+        </h2>
+        <h3>Software Developer</h3>
         <p>
           수학, 컴퓨터 공학 학사 학위 취득 후 교육 프로그램 42Seoul 공통 과정을
-          수료했습니다. 새로운 기능 추가, 성능개선 개발 과정에서 발생하는 다양한
-          문제해결 후 느끼는 성취감을 좋아합니다. 동료들과의 끊임 없는 소통이
-          특기입니다.
+          수료했습니다. 문제해결 과정에서 발생하는 다양한 어려움을 이겨내고
+          느끼는 성취감을 좋아합니다. 동료들과의 끊임 없는 소통이 특기입니다.
         </p>
       </div>
     </div>
