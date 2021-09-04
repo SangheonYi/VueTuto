@@ -66,7 +66,7 @@ export default {
 
 .contact-content img {
   vertical-align: middle;
-  margin-right: 18px;
+  margin-right: 10px;
 }
 
 .contact-a {

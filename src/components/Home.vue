@@ -1,9 +1,11 @@
 <template>
   <div class="Home-container">
-    <About />
+    <div class="about-contact-container">
+      <About class="home-about" />
+      <Contact class="home-contact" />
+    </div>
     <Skill />
     <Project />
-    <Contact />
     <TopButton />
   </div>
 </template>
@@ -28,4 +30,23 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.about-contact-container {
+  padding-left: 70px;
+  padding-right: 10px;
+  display: flex;
+}
+
+.about-contact-container .MaterialCard {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.home-about {
+  width: 64%;
+  height: 100%;
+}
+.home-contact {
+  width: 25%;
+}
+</style>

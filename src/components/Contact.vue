@@ -3,7 +3,7 @@
     <div class="contact-container">
       <div class="section-title ">
         <h2>
-          How can contact?
+          Contact me!
         </h2>
       </div>
       <div class="partition">

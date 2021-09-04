@@ -31,7 +31,7 @@ export default {
   name: "Navigation",
   data() {
     return {
-      menus: [`About`, `Skill`, `Project`, `Contact`],
+      menus: [`About`, `Contact`, `Skill`, `Project`],
       base_url,
     };
   },
