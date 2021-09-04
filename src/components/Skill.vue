@@ -17,44 +17,68 @@
           <div class="front">
             <img
               class="skill-image"
-              v-for="element in images"
+              v-for="element in skills"
               :key="element"
-              :src="require(`../assets/skill_icon/${element}`)"
+              :src="require(`../assets/skill_icon/${element.icon}`)"
+              @mouseenter="showDescription(element)"
             />
           </div>
         </div>
       </div>
-      <div class="skill-description">
-        <p>
-          some description
-        </p>
+      <div class="skill-detail">
+        <h2 class="skill-detail-name"></h2>
+        <p class="skill-detail-description"></p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-const images = [
-  `C_Programming_Language.svg`,
-  `ISO_C++_Logo.svg`,
-  `java.svg`,
-  `Kotlin_Icon.svg`,
-  `JavaScript.svg`,
-  `Typescript_logo_2020.svg`,
-  `Android_robot.svg`,
-  `React-icon.svg`,
-  `Vue.js_Logo_2.svg`,
-  `nestjs-icon.svg`,
-  `postgresql.svg`,
-  `docker.svg`,
+const c_cpp_description = `
+   - semaphore, mutex, pipe를 사용한 thread, process 비동기 프로그래밍 경험\n
+   - Makefile 매크로 작성 및 relink 방지 경험\n
+   -
+   `;
+const java_kotlin_description = ``;
+const skills = [
+  {
+    icon: `C_Programming_Language.svg`,
+    name: `C`,
+    description: c_cpp_description,
+  },
+  { icon: `ISO_C++_Logo.svg`, name: `C++`, description: c_cpp_description },
+  { icon: `java.svg`, name: `Java`, description: java_kotlin_description },
+  {
+    icon: `Kotlin_Icon.svg`,
+    name: `Kotlin`,
+    description: java_kotlin_description,
+  },
+  { icon: `JavaScript.svg`, name: `JavaScript`, description: `` },
+  { icon: `Typescript_logo_2020.svg`, name: `Typescript`, description: `` },
+  { icon: `Android_robot.svg`, name: `Android`, description: `` },
+  { icon: `React-icon.svg`, name: `React`, description: `` },
+  { icon: `Vue.js_Logo_2.svg`, name: `Vue.js`, description: `` },
+  { icon: `nestjs-icon.svg`, name: `Nestjs`, description: `` },
+  { icon: `postgresql.svg`, name: `Postgresql`, description: `` },
+  { icon: `docker.svg`, name: `Docker`, description: `` },
 ];
 export default {
   name: "Skill",
-
   data() {
     return {
-      images,
+      skills,
     };
+  },
+  methods: {
+    showDescription: (skill) => {
+      const detail = document.querySelector(`.skill-detail`);
+      console.log(detail);
+      detail.style.backgroud = `white`;
+      const name = document.querySelector(`.skill-detail-name`);
+      name.textContent = skill.name;
+      const description = document.querySelector(`.skill-detail-description`);
+      description.textContent = skill.description;
+    },
   },
 };
 </script>
@@ -71,7 +95,7 @@ export default {
   background: var(--bs-grey801);
 }
 
-.skill-description {
+.skill-detail {
   width: 25%;
   margin-left: 20px;
   color: var(--bs-grey300);
