@@ -1,7 +1,7 @@
 <template>
   <div class="MaterialCard">
-    <div class="skill">
-      <div class="skill-contents ">
+    <div class="skill-flex">
+      <div class="skill-container ">
         <div class="section-title ">
           <h2>
             My Programming Skills?
@@ -13,54 +13,38 @@
           <span class="light-orange-under-line" />
           <span class="semi-dark-orange-under-line" />
         </div>
-        <div class="contents-container">
-          <div class="front">
-            <img
-              class="skill-image"
-              v-for="element in skills"
-              :key="element"
-              :src="require(`../assets/skill_icon/${element.icon}`)"
-              @mouseenter="showDescription(element)"
-            />
-          </div>
+        <div>
+          <ul class="contents-container">
+            <li v-for="element in skills" :key="element">
+              <div class="skill-card">
+                <img
+                  class="skill-image"
+                  :src="require(`../assets/skill_icon/${element}`)"
+                  @mouseenter="showDescription($event)"
+                />
+              </div>
+            </li>
+          </ul>
         </div>
-      </div>
-      <div class="skill-detail">
-        <h2 class="skill-detail-name"></h2>
-        <p class="skill-detail-description"></p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-const c_cpp_description = `
-   - semaphore, mutex, pipe를 사용한 thread, process 비동기 프로그래밍 경험\n
-   - Makefile 매크로 작성 및 relink 방지 경험\n
-   -
-   `;
-const java_kotlin_description = ``;
 const skills = [
-  {
-    icon: `C_Programming_Language.svg`,
-    name: `C`,
-    description: c_cpp_description,
-  },
-  { icon: `ISO_C++_Logo.svg`, name: `C++`, description: c_cpp_description },
-  { icon: `java.svg`, name: `Java`, description: java_kotlin_description },
-  {
-    icon: `Kotlin_Icon.svg`,
-    name: `Kotlin`,
-    description: java_kotlin_description,
-  },
-  { icon: `JavaScript.svg`, name: `JavaScript`, description: `` },
-  { icon: `Typescript_logo_2020.svg`, name: `Typescript`, description: `` },
-  { icon: `Android_robot.svg`, name: `Android`, description: `` },
-  { icon: `React-icon.svg`, name: `React`, description: `` },
-  { icon: `Vue.js_Logo_2.svg`, name: `Vue.js`, description: `` },
-  { icon: `nestjs-icon.svg`, name: `Nestjs`, description: `` },
-  { icon: `postgresql.svg`, name: `Postgresql`, description: `` },
-  { icon: `docker.svg`, name: `Docker`, description: `` },
+  `C_Programming_Language.svg`,
+  `ISO_C++_Logo.svg`,
+  `java.svg`,
+  `Kotlin_Icon.svg`,
+  `JavaScript.svg`,
+  `Typescript_logo_2020.svg`,
+  `Android_robot.svg`,
+  `React-icon.svg`,
+  `Vue.js_Logo_2.svg`,
+  `nestjs-icon.svg`,
+  `postgresql.svg`,
+  `docker.svg`,
 ];
 export default {
   name: "Skill",
@@ -70,60 +54,69 @@ export default {
     };
   },
   methods: {
-    showDescription: (skill) => {
-      const detail = document.querySelector(`.skill-detail`);
-      console.log(detail);
-      detail.style.backgroud = `white`;
-      const name = document.querySelector(`.skill-detail-name`);
-      name.textContent = skill.name;
-      const description = document.querySelector(`.skill-detail-description`);
-      description.textContent = skill.description;
+    showDescription: (event) => {
+      console.log(event.target.style.display);
+      // event.target.style.visibility = `hidden`;
     },
   },
 };
 </script>
 
 <style>
-.skill {
+.skill-flex {
   display: flex;
-  flex-direction: row;
 }
 
-.skill-contents {
-  width: 75%;
-  color: var(--bs-grey300);
-  background: var(--bs-grey801);
-}
-
-.skill-detail {
-  width: 25%;
-  margin-left: 20px;
+.skill-container {
+  width: 100%;
   color: var(--bs-grey300);
   background: var(--bs-grey801);
 }
 
 .contents-container {
   width: 100%;
-  display: flex;
   flex-wrap: wrap;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+
   justify-content: center;
+
+  list-style-type: none;
+  box-sizing: border-box;
 }
 
-.contents-container .skill-image {
-  border-radius: 20px;
-  width: 10%;
-  height: 30%;
-  padding: 5px;
-  margin: 20px;
+.contents-container li {
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+  margin: 0 8px 16px;
+  position: relative;
+
+  border-radius: 0.63rem;
   background-color: var(--bs-grey700);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.contents-container .skill-image:hover {
+.contents-container li:hover {
   background-color: var(--bs-grey500);
   transform: translateY(-10px);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 5px 12px rgba(0, 0, 0, 0.5);
+}
+
+.skill-card {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+.contents-container .skill-image {
+  display: block;
+  width: 80%;
+  height: 100%;
+  margin: auto;
 }
 
 .partition {
@@ -153,5 +146,16 @@ export default {
 .semi-dark-orange-under-line {
   width: 20%;
   background-color: var(--rally-semi-dark-orange);
+}
+
+.skill-card {
+}
+
+.image-section {
+  z-index: 100;
+}
+
+.name-section {
+  z-index: 2;
 }
 </style>
