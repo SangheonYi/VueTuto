@@ -48,13 +48,13 @@ export default {
 }
 
 .about-img {
-  width: 20%;
-  height: auto;
+  width: 210px;
+  height: 280px;
   padding: 20px;
 }
 
 .about-content {
-  width: 75%;
+  width: 80%;
   color: var(--bs-grey300);
   background: var(--bs-grey801);
 }
