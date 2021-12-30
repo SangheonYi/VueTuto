@@ -69,15 +69,6 @@ export default {
   display: flex;
 }
 
-.partition {
-  display: flex;
-}
-
-.partition span {
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  border: 1px solid transparent;
-}
-
 .dark-purple-under-line {
   width: 10%;
   background-color: var(--rally-dark-purple);

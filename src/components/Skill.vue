@@ -1,31 +1,29 @@
 <template>
-  <div class="MaterialCard">
-    <div class="skill-flex">
-      <div class="skill-container ">
-        <div class="section-title ">
-          <h2>
-            My Programming Skills?
-          </h2>
-        </div>
-        <div class="partition">
-          <span class="dark-orange-under-line" />
-          <span class="orange-under-line" />
-          <span class="light-orange-under-line" />
-          <span class="semi-dark-orange-under-line" />
-        </div>
-        <div>
-          <ul class="contents-container">
-            <li v-for="element in skills" :key="element">
-              <div class="skill-card">
-                <img
-                  class="skill-image"
-                  :src="require(`../assets/skill_icon/${element}`)"
-                  @mouseenter="showDescription($event)"
-                />
-              </div>
-            </li>
-          </ul>
-        </div>
+  <div class="MaterialCard skill-flex">
+    <div class="skill-container ">
+      <div class="section-title ">
+        <h2>
+          My Programming Skills?
+        </h2>
+      </div>
+      <div class="partition">
+        <span class="dark-orange-under-line" />
+        <span class="orange-under-line" />
+        <span class="light-orange-under-line" />
+        <span class="semi-dark-orange-under-line" />
+      </div>
+      <div>
+        <ul class="contents-container">
+          <li v-for="element in skills" :key="element">
+            <div class="skill-card">
+              <img
+                class="skill-image"
+                :src="require(`../assets/skill_icon/${element}`)"
+                @mouseenter="showDescription($event)"
+              />
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -124,7 +122,6 @@ export default {
 }
 
 .partition span {
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   border: 1px solid transparent;
 }
 
@@ -146,9 +143,6 @@ export default {
 .semi-dark-orange-under-line {
   width: 20%;
   background-color: var(--rally-semi-dark-orange);
-}
-
-.skill-card {
 }
 
 .image-section {

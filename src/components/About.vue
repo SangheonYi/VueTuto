@@ -48,8 +48,8 @@ export default {
 }
 
 .about-img {
-  width: 210px;
-  height: 280px;
+  width: 240px;
+  height: 320px;
   padding: 20px;
 }
 

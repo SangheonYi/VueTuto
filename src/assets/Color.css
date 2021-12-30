@@ -33,6 +33,13 @@
   --rally-semi-dark-purple: #b388ff;
   --rally-deep-purple900: #311b92;
 
+  /* yellow */
   --rally-yellow: #ffcf44;
+  --rally-light-yellow: #ffffe6;
+  --rally-dark-yellow: #ff8a00;
+  --rally-semi-dark-yellow: #ffd100;
+  --rally-deep-yellow900: #ffb700;
+
+
   --rally-blue: #72deff;
 }

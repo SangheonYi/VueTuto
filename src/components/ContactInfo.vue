@@ -20,33 +20,11 @@
 </template>
 
 <script>
-const contacts = [
-  {
-    method: "Email",
-    icon: "mail_outline_black_24dp.svg",
-    contact: "yshgnu@naver.com",
-    href_method: "mailto:",
-  },
-  {
-    method: "Phone",
-    icon: "phone_in_talk_black_24dp.svg",
-    contact: "010-9298-3954",
-    href_method: "tel:",
-  },
-  {
-    method: "Github",
-    icon: "github.svg",
-    contact: "https://github.com/SangheonYi",
-    href_method: "",
-  },
-];
+
 export default {
   name: "ContactInfo",
   props: {
     contact: JSON,
-  },
-  data() {
-    return { contacts };
   },
 };
 </script>
