@@ -1,5 +1,5 @@
 name: Build Vue
-on: merge
+on: push
 
 jobs:
   build_vue:
