@@ -1,6 +1,6 @@
 <template>
-  <div class="project MaterialCard">
-    <div class="project-content">
+  <div class="project project-content MaterialCard">
+    <div class="contact-container">
       <div class="section-title ">
         <h2>{{ project.name }}.</h2>
       </div>
@@ -11,15 +11,20 @@
         <span class="deep-yellow-under-line" />
         <span class="semi-dark-yellow-under-line" />
       </div>
-      <div class="project-info contact-container">
-        <div class="project-image-container">
+      <div class="project-info">
+        <div class="project-description">
           <div>
-            <img
-              v-for="element in project.screenshot"
-              :key="element"
-              :src="require(`../assets/project/${element}`)"
-            />
+            {{ project.description }}
           </div>
+          <img :src="require(`../assets/contact_icon/${gitIcon}`)" /> :
+          <a class="contact-a" :href="project.git">{{ project.git }}</a>
+        </div>
+        <div class="project-image-container">
+          <img
+            v-for="element in project.screenshot"
+            :key="element"
+            :src="require(`../assets/project/${element}`)"
+          />
         </div>
       </div>
     </div>
@@ -40,13 +45,26 @@ export default {
 </script>
 
 <style>
-.project-info img {
-  width: 50%;
+.project-info {
+  padding: 15px;
+}
+
+.project-image-container {
+  max-width: 1000px;
+}
+
+.project-image-container img {
+  width: 100%;
+}
+
+.project-content {
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 .project-image-container {
   display: flex;
-  margin-top: 15px;
+  margin: 15px;
 }
 
 .dark-yellow-under-line {
